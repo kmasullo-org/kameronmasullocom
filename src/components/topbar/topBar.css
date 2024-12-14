@@ -1,0 +1,9 @@
+.top-bar {
+    text-align: center;
+}
+
+.top-bar-logo {
+    width: 100%;
+    max-width: 600px;
+    margin: 16px 0;
+}
