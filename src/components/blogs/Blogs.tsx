@@ -1,9 +1,11 @@
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import './blogs.css';
+import Slider from "react-slick";
+import {carouselSettings} from "../common/carousel/carouselConfig.ts";
 
 const Blogs = () => {
-
+    
     const [blogs, setBlogs] = useState<any[]>([]);
 
     useEffect(() => {
@@ -17,6 +19,16 @@ const Blogs = () => {
             .then(res => setBlogs(res.items))
     }
 
+    const renderBlogCard = (blog: any) => (
+        <Link key={`blog-${blog.title}`} className={'no-dec-link'} to={blog.link} target="_blank"
+              rel="noopener noreferrer">
+            <div className={'blog-card'}>
+                <img src={extractImageFromContent(blog.content)} alt={'blog-image'} className={'blog-image'}/>
+                <h4>{blog.title}</h4>
+            </div>
+        </Link>
+    );
+
     const extractImageFromContent = (content: string): string => {
         const imgMatch = content.match(/<img[^>]+src="([^">]+)"/);
         return imgMatch ? imgMatch[1] : '';
@@ -25,15 +37,12 @@ const Blogs = () => {
     return (
         <div className={'blogs component-parent'}>
             <h2>Blogs</h2>
-            <div className={'flex-row flex-justify-center'}>
-            { blogs?.map((blog: any) => (
-                <Link key={`blog-${blog.title}`} className={'no-dec-link'} to={blog.link} target="_blank" rel="noopener noreferrer">
-                    <div className={'blog-card'}>
-                        <img src={extractImageFromContent(blog.content)} alt={'blog-image'} className={'blog-image'}/>
-                        <h4>{blog.title}</h4>
-                    </div>
-                </Link>
-            ))}
+            <div className={'blogs-container'}>
+                <div className={'slider-container'}>
+                    <Slider {...carouselSettings}>
+                        {blogs?.map(renderBlogCard)}
+                    </Slider>
+                </div>
             </div>
         </div>
     );
