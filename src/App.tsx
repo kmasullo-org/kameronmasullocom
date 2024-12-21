@@ -1,11 +1,21 @@
-import React from 'react';
-import './App.css';
-import NavComponent from './nav/NavComponent';
+import './App.css'
+import TopBar from "./components/topbar/TopBar.tsx";
+import Listen from "./components/listen/Listen.tsx";
+import Blogs from "./components/blogs/Blogs.tsx";
+import Albums from "./components/albums/Albums.tsx";
+import Footer from "./components/footer/Footer.tsx";
 
-const App = () => {
+function App() {
+
   return (
-    <NavComponent />
+      <div className="app">
+          <TopBar/>
+          <Listen/>
+          <Blogs/>
+          <Albums/>
+          <Footer/>
+      </div>
   );
 }
 
-export default App;
+export default App
