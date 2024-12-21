@@ -1,31 +1,23 @@
 .albums {
-    text-align: center;
     height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.95)), url('../../../public/images/cracked_wall.png') no-repeat center;
     background-size: cover;
 }
 
-.albums-container {
-    width: 100%;
-    max-width: 1000px;
-    padding-bottom: 32px;
-}
-
-.album {
-    margin: 16px;
-    width: 300px;
-    height: 360px;
-    border: none;
-    box-shadow: 6px 6px 6px -6px rgba(0, 0, 0, 0.41);
+.album-card {
     outline: none;
     cursor: pointer;
     background: none;
     color: white;
+    border-radius: 4px;
 }
 
-.album-image {
-    width: 300px;
-    height: 300px;
+.album-card-image {
+    width: 298px;
+    height: 298px;
     object-fit: cover;
-    border-radius: 4px;
+}
+
+.album-card-body {
+    margin: 8px 0;
 }

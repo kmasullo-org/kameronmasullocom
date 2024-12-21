@@ -1,26 +1,15 @@
-.blogs {
-    text-align: center;
-}
-
 .blog-card {
-    width: 300px;
-    height: 260px;
-    border: none;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
-    box-shadow: 6px 6px 6px -6px white;
     outline: none;
     cursor: pointer;
     background: none;
     color: white;
+    border-radius: 4px;
+    border-right: 1px solid #6a6a6a;
+    border-bottom: 1px solid #6a6a6a;
 }
 
-.blog-image {
-    width: 100%;
-}
-
-.blogs-container {
-    width: 100%;
-    max-width: 1000px;
-    padding-bottom: 32px;
+.blog-card-image {
+    width: 298px;
+    height: 200px;
+    object-fit: cover;
 }

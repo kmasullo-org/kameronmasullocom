@@ -1,6 +1,6 @@
-import {ICarouselSlide} from "../common/carousel/carouselConfig.ts";
+import {IAlbum} from "./albumsConfig.ts";
 
-export const albumSlides: ICarouselSlide[] = [
+export const albumsList: IAlbum[] = [
     {
         id: 'fractals-album-slide',
         title: 'Fractals (Horn Version)',
